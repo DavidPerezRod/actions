@@ -1,5 +1,5 @@
 name: Deploy Project (sequential)
-on: push
+on: [push, workflow_dispatch]
 jobs:
   test: #nombre del job
     runs-on: ubuntu-latest
