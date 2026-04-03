@@ -3,12 +3,14 @@ on:
   pull_request:
     types: opened
   workflow_dispatch:
+  push:
+    branches: [main]
 jobs:
   test: #nombre del job
     runs-on: ubuntu-latest
     steps:
       - name: Output event data
-        run: echo "${ { toJson(github.event) } }"
+        run: echo "${{ toJson(github) }}"        
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
